@@ -32,22 +32,6 @@
          right: 0;
       }
 
-      .donka_img {
-         position: relative;
-         display: block;
-         margin: 0 auto;
-         top: -110px;
-      }
-
-      .donka_nose_img {
-         position: relative;
-         display: block;
-         margin: 0 auto;
-         top: -512px;
-         z-index: 2;
-      }
-
-
       #monstereyes {
          position: relative;
          width: 235px;
@@ -90,23 +74,12 @@
 
       }
 
-      div#keyboard_button:hover {
-         color: #FFFC;
-      }
 
       div#social_button {
          cursor: pointer;
       }
 
       div#social_button:hover {
-         color: #FFFC;
-      }
-
-      div#project_button {
-         cursor: pointer;
-      }
-
-      div#project_button:hover {
          color: #FFFC;
       }
 
@@ -199,31 +172,23 @@
 
    </div>
    <script type="text/javascript">
-      $('#keyboard_button').click(function () {
-         if ($('#keyboard').css('visibility') == 'hidden') {
-            $('#keyboard').css('visibility', 'visible');
+      $('#social_button').click(function () {
+         if ($('#social').css('visibility') == 'hidden') {
             $('#social').css('visibility', 'hidden');
-            $('#project').css('visibility', 'hidden');
          } else {
-            $('#keyboard').css('visibility', 'hidden');
          }
       });
       $('#social_button').click(function () {
          if ($('#social').css('visibility') == 'hidden') {
             $('#social').css('visibility', 'visible');
-            $('#project').css('visibility', 'hidden');
-            $('#keyboard').css('visibility', 'hidden');
          } else {
             $('#social').css('visibility', 'hidden');
          }
       });
-      $('#project_button').click(function () {
-         if ($('#project').css('visibility') == 'hidden') {
-            $('#project').css('visibility', 'visible');
+      $('#social_button').click(function () {
+         if ($('#social').css('visibility') == 'hidden') {
             $('#social').css('visibility', 'hidden');
-            $('#keyboard').css('visibility', 'hidden');
          } else {
-            $('#project').css('visibility', 'hidden');
          }
       });
    </script>
