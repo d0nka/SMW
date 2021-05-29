@@ -2,96 +2,186 @@
 <html>
 
 <head>
-   <title>donka</title>
-   <link rel="icon" type="image/x-icon" href="icon.png/">
-   <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Bungee" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
-   <script src="../code.jquery.com/jquery-3.5.1.min.js"></script>
-   <script type="text/javascript"></script>
+   <meta charset="UTF-8">
    <style>
       body {
-         background: #101214;
-         background-image: url(https://www.linkpicture.com/q/background_1.png);
-         color: #FFF8;
-         font-size: 2.3vw;
-         font-family: 'Bungee', regular;
-         user-select: none;
-         height: 100%;
+         margin: 0;
+         padding: 0;
+         font-family: sans-serif;
       }
 
-      .donka_div {
-         position: fixed;
-         width: 500px;
-         height: 450px;
-         z-index: -10;
-         margin: auto;
-         top: 0;
-         left: 0;
-         bottom: 0;
-         right: 0;
+      main {
+         margin: 5vh 15%;
       }
 
-      #monstereyes {
-         position: relative;
-         width: 235px;
-         height: 110px;
-         left: 139px;
-         top: 8px;
-         z-index: 1
+      h1 {
+         font-size: 40px;
+         font-weight: 400;
+         text-align: center;
       }
 
-      #vbg {
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         min-width: 100%;
-         min-height: 100%;
-         transform: translate(-50%, -50%);
-         z-index: -100;
-         filter: blur(35px);
+      img {
+         width: 50%;
+         height: auto;
       }
 
-      div.menu {
-         position: fixed;
-         margin: 0 auto;
-         bottom: 1em;
-         left: 0;
-         right: 0;
-         width: 60%;
-         display: flex;
-         justify-content: space-between;
+      p {
+         text-align: justify;
+         font-size: 18px;
       }
 
-
-
-      div.social_menu {
-         bottom: 3em;
-         width: 88%;
-         visibility: hidden;
-
-
-
+      label {
+         position: absolute;
+         width: 45px;
+         height: 22px;
+         right: 20px;
+         top: 20px;
+         border: 2px solid;
+         border-radius: 20px;
       }
 
-
-      div#social_button {
+      label:before {
+         position: absolute;
+         content: '';
+         width: 20px;
+         height: 20px;
+         left: 1px;
+         top: 1px;
+         border-radius: 50%;
+         background: #000;
          cursor: pointer;
+         transition: 0.4s;
       }
 
-      div#social_button:hover {
-         color: #FFFC;
+      label.active:before {
+         left: 24px;
+         background: #fff;
       }
 
-      a {
-         text-decoration: none;
-         color: #FFF8;
+      body.night {
+         background: #000;
+         color: rgb(255, 255, 255);
       }
 
-      a:hover {
-         color: #FFFC;
+      @media screen and (min-width:900px) {
+         .respon {
+            display: flex;
+         }
+
+         img {
+            height: 50%;
+            width: auto;
+            padding-top: 3vh;
+            padding-right: 5%;
+         }
+
+         p {
+            max-width: 80%;
+            line-height: 30px;
+         }
       }
    </style>
+</head>
+
+<body>
+   <header> <label id="dark-change"></label> </header>
+   <main>
+      </div>
+   </main>
+   <script> var content = document.getElementsByTagName('body')[0]; var darkMode = document.getElementById('dark-change'); darkMode.addEventListener('click', function () { darkMode.classList.toggle('active'); content.classList.toggle('night'); })</script>
+</body>
+
+</html>
+<title>donka</title>
+<link rel="icon" type="image/x-icon" href="icon.png/">
+<link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
+<script src="../code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript"></script>
+<style>
+   body {
+      background: #101214;
+      background-image: url(https://www.linkpicture.com/q/background_1.png);
+      color: #FFF8;
+      font-size: 2.3vw;
+      font-family: 'Bungee', regular;
+      user-select: none;
+      height: 100%;
+   }
+
+   .donka_div {
+      position: fixed;
+      width: 500px;
+      height: 450px;
+      z-index: -10;
+      margin: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+   }
+
+   #monstereyes {
+      position: relative;
+      width: 235px;
+      height: 110px;
+      left: 139px;
+      top: 8px;
+      z-index: 1
+   }
+
+   #vbg {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      z-index: -100;
+      filter: blur(35px);
+   }
+
+   div.menu {
+      position: fixed;
+      margin: 0 auto;
+      bottom: 1em;
+      left: 0;
+      right: 0;
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+   }
+
+
+
+   div.social_menu {
+      bottom: 3em;
+      width: 88%;
+      visibility: hidden;
+
+
+
+   }
+
+
+   div#social_button {
+      cursor: pointer;
+   }
+
+   div#social_button:hover {
+      color: #FFFC;
+   }
+
+   a {
+      text-decoration: none;
+      color: #FFF8;
+   }
+
+   a:hover {
+      color: #FFFC;
+   }
+</style>
 </head>
 
 <body>
