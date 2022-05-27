@@ -1,11 +1,210 @@
-<section class="move-area">
-  <div class='.container'>
-    <div class='eye'></div>
-    <div class='eye'></div>
-  </div>
-</section><section class="move-area">
-  <div class='.container'>
-    <div class='eye'></div>
-    <div class='eye'></div>
-  </div>
-</section>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>donka | Social Media</title>
+  <link rel="icon" type="image/x-icon" href="https://i.ibb.co/rH83Brw/icon.png">
+</head>
+<body>
+
+</body>
+</html>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="donka">
+    <meta property="og:description" content="I am epic 👺">
+    <meta property="og:image" content="Assets/Images/wicon.png">
+    <meta name="theme-color" content="#000">
+    <link rel="shortcut icon" type="image/png" href="Assets/Images/icon.png" />
+
+
+<link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
+<script src="../code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript"></script>
+<style>
+   body {
+      background: #101214;
+      background-image: url(https://th.bing.com/th/id/R.42656d498c1de9c296921038c27faf5d?rik=iRGCklEUlLkQow&pid=ImgRaw&r=0);
+      color: #FFF8;
+      font-size: 2.3vw;
+      font-family: 'Bungee', regular;
+      user-select: none;
+      height: 100%;
+   }
+
+   .donka_div {
+      position: fixed;
+      width: 500px;
+      height: 450px;
+      z-index: -10;
+      margin: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+   }
+
+   #monstereyes {
+      position: relative;
+      width: 235px;
+      height: 110px;
+      left: 139px;
+      top: 8px;
+      z-index: 1
+   }
+
+   #vbg {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      z-index: -100;
+      filter: blur(35px);
+   }
+
+   div.menu {
+      position: fixed;
+      margin: 0 auto;
+      bottom: 1em;
+      left: 0;
+      right: 0;
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+   }
+
+
+
+   div.social_menu {
+      bottom: 3em;
+      width: 88%;
+      visibility: hidden;
+
+
+
+   }
+
+
+   div#social_button {
+      cursor: pointer;
+   }
+
+   div#social_button:hover {
+      color: #FFFC;
+   }
+
+   a {
+      text-decoration: none;
+      color: #FFF8;
+   }
+
+   a:hover {
+      color: #FFFC;
+   }
+</style>
+</head>
+
+<body>
+   <div class="donka_div">
+      <div id="monstereyes"></div>
+   </div>
+   <script>
+      var DrawEye = function (eyecontainer, pupil, eyeposx, eyeposy, eyer) {
+         $("#monstereyes").append("<div id='" + eyecontainer + "'><div id='" + pupil + "'></div></div>")
+
+         eyecontainer = "#" + eyecontainer;
+         pupil = "#" + pupil;
+
+         $(eyecontainer).css({ left: eyeposx, top: eyeposy });
+         $(pupil).css({ width: eyer * 0.4, height: eyer * 0.4 });
+         $(eyecontainer).css({ width: eyer, height: eyer });
+         $(pupil).css({ position: 'relative', background: '#000000', 'border-radius': '40%' });
+         $(eyecontainer).css({ position: 'absolute', background: '#FFFFFF', overflow: 'hidden', 'border-radius': '40%' });
+
+
+         // Initialise core variables
+         var r = $(pupil).width() / 2;
+         var center = {
+            x: $(eyecontainer).width() / 2 - r,
+            y: $(eyecontainer).height() / 2 - r
+         };
+         var distanceThreshold = $(eyecontainer).width() / 2 - r;
+         var mouseX = center.x, mouseY = center.y;
+         var touchX = center.x, touchY = center.y;
+         var offset = $("#monstereyes").offset()
+
+         // Listen for mouse movement
+         $(window).mousemove(function (e) {
+            var d = {
+               x: e.pageX - r - eyeposx - center.x - offset.left,
+               y: e.pageY - r - eyeposy - center.y - offset.top
+            };
+            var distance = Math.sqrt(d.x * d.x + d.y * d.y);
+            if (distance < distanceThreshold) {
+               mouseX = e.pageX - eyeposx - r - offset.left;
+               mouseY = e.pageY - eyeposy - r - offset.top;
+            } else {
+               mouseX = d.x / distance * distanceThreshold + center.x;
+               mouseY = d.y / distance * distanceThreshold + center.y;
+            }
+         });
+
+         // Update pupil location
+         var pupil = $(pupil);
+         var xp = center.x, yp = center.y;
+         var loop = setInterval(function () {
+            // change 1 to alter damping/momentum - higher is slower
+            xp += (mouseX - xp) / 25;
+            yp += (mouseY - yp) / 25;
+            pupil.css({ left: xp, top: yp });
+         }, 1);
+      };
+
+      var eye = new DrawEye("eye1", "pupil1", 0, 0, 110);
+      var eye = new DrawEye("eye2", "pupil2", 110, 0, 110);
+   </script>
+   <div class="menu">
+      <a href="https://donka.cf">‏‏‎‎Website‎</a>
+      <div id="social_button">Social&zwnj; </div>
+   </div>
+
+   </div>
+   <div id="social" class="menu social_menu">
+      <a href="http://discordapp.com/users/938074372122484838">‎Discord</a>
+      <a href="https://github.com/d0nka">‏‏‎‎Github</a>
+      <a href="https://www.instagram.com/daniellepski/">Instagram</a>
+      <a href="https://www.tiktok.com/@.donka">‎Tiktok</a>
+      <a href="https://twitter.com/donka___">‏‏‎Twitter</a>
+
+      <div>
+      </div>
+
+   </div>
+   <script type="text/javascript">
+      $('#social_button').click(function () {
+         if ($('#social').css('visibility') == 'hidden') {
+            $('#social').css('visibility', 'hidden');
+         } else {
+         }
+      });
+      $('#social_button').click(function () {
+         if ($('#social').css('visibility') == 'hidden') {
+            $('#social').css('visibility', 'visible');
+         } else {
+            $('#social').css('visibility', 'hidden');
+         }
+      });
+      $('#social_button').click(function () {
+         if ($('#social').css('visibility') == 'hidden') {
+            $('#social').css('visibility', 'hidden');
+         } else {
+         }
+      });
+   </script>
+</body>
+
+
+</html>
